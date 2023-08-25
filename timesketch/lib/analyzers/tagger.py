@@ -20,7 +20,12 @@ class TaggerSketchPlugin(interface.BaseAnalyzer):
 
     CONFIG_FILE = "tags.yaml"
 
-    MODIFIERS = {"split": lambda x: x.split(), "upper": lambda x: x.upper()}
+    MODIFIERS = {
+        "split": lambda x: x.split(),
+        "upper": lambda x: x.upper(),
+        "lower": lambda x: x.lower(),
+        "title": lambda x: x.title(),
+    }
 
     def __init__(self, index_name, sketch_id, timeline_id=None, **kwargs):
         """Initialize The Sketch Analyzer.
